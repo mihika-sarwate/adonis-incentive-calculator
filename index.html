@@ -219,20 +219,20 @@
   input[type="number"] {
     width: 100%;
     height: 42px;
-    border: 1.5px solid var(--border);
+    border: 1.5px solid #C6D8F2;
     border-radius: var(--radius-sm);
     font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
     color: var(--text);
-    background: var(--surface);
+    background: #EDF3FC;
     padding: 0 12px 0 26px;
     outline: none;
-    transition: border-color 0.15s;
+    transition: all 0.2s ease-in-out;
     -moz-appearance: textfield;
   }
   input[type="number"]::-webkit-outer-spin-button,
   input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
-  input[type="number"]:focus { border-color: var(--navy-light); background: #fff; }
+  input[type="number"]:focus { border-color: var(--navy); background: #ffffff; box-shadow: 0 0 0 3px rgba(11, 31, 75, 0.1); }
   .inp-hint { font-size: 10px; color: var(--muted); margin-top: 4px; }
 
   /* METRICS ROW */
@@ -443,7 +443,7 @@
         <div class="section-icon icon-navy">🎯</div>
         <div>
           <div class="section-title">Enter Inputs</div>
-          <div class="section-period">Fill in yellow fields</div>
+          <div class="section-period">Enter performance values</div>
         </div>
       </div>
       <span class="chevron">⌄</span>
@@ -455,14 +455,14 @@
             <div class="field-label">Target (₹)</div>
             <div class="inp-wrap">
               <span class="inp-prefix">₹</span>
-              <input type="number" id="m-target" value="500000" min="0" oninput="calcAll()">
+              <input type="number" id="m-target" placeholder="Enter target" min="0" oninput="calcAll()">
             </div>
           </div>
           <div>
             <div class="field-label">Actual (₹)</div>
             <div class="inp-wrap">
               <span class="inp-prefix">₹</span>
-              <input type="number" id="m-actual" value="450000" min="0" oninput="calcAll()">
+              <input type="number" id="m-actual" placeholder="Enter actual" min="0" oninput="calcAll()">
             </div>
           </div>
         </div>
@@ -471,7 +471,7 @@
         <div class="field-label">Last Year Same Period (₹) <span style="color:#aaa;font-weight:400">(optional)</span></div>
         <div class="inp-wrap">
           <span class="inp-prefix">₹</span>
-          <input type="number" id="m-ly" value="0" min="0" oninput="calcAll()" placeholder="0">
+          <input type="number" id="m-ly" placeholder="0" min="0" oninput="calcAll()">
         </div>
         <div class="inp-hint">Leave 0 if no LY data — growth check will be skipped</div>
       </div>
@@ -521,20 +521,20 @@
     <div class="section-header" onclick="toggleSection(this)">
       <div class="section-header-left">
         <div class="section-icon icon-navy">🎯</div>
-        <div><div class="section-title">Enter Inputs</div><div class="section-period">Fill in yellow fields</div></div>
+        <div><div class="section-title">Enter Inputs</div><div class="section-period">Enter performance values</div></div>
       </div>
       <span class="chevron">⌄</span>
     </div>
     <div class="section-body">
       <div class="field-group">
         <div class="field-row">
-          <div><div class="field-label">Target (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="b-target" value="1000000" min="0" oninput="calcAll()"></div></div>
-          <div><div class="field-label">Actual (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="b-actual" value="1000000" min="0" oninput="calcAll()"></div></div>
+          <div><div class="field-label">Target (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="b-target" placeholder="Enter target" min="0" oninput="calcAll()"></div></div>
+          <div><div class="field-label">Actual (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="b-actual" placeholder="Enter actual" min="0" oninput="calcAll()"></div></div>
         </div>
       </div>
       <div class="field-group">
         <div class="field-label">Last Year Same Period (₹) <span style="color:#aaa;font-weight:400">(optional)</span></div>
-        <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="b-ly" value="0" min="0" oninput="calcAll()" placeholder="0"></div>
+        <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="b-ly" placeholder="0" min="0" oninput="calcAll()"></div>
         <div class="inp-hint">Leave 0 if no LY data</div>
       </div>
       <div class="metrics-row">
@@ -563,19 +563,19 @@
   <div class="degrowth-banner" id="a-degrowth-banner">⚠️ Degrowth vs last year — no incentive payable</div>
   <div class="section-card open">
     <div class="section-header" onclick="toggleSection(this)">
-      <div class="section-header-left"><div class="section-icon icon-navy">🎯</div><div><div class="section-title">Enter Inputs</div><div class="section-period">Fill in yellow fields</div></div></div>
+      <div class="section-header-left"><div class="section-icon icon-navy">🎯</div><div><div class="section-title">Enter Inputs</div><div class="section-period">Enter performance values</div></div></div>
       <span class="chevron">⌄</span>
     </div>
     <div class="section-body">
       <div class="field-group">
         <div class="field-row">
-          <div><div class="field-label">Target (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="a-target" value="1000000" min="0" oninput="calcAll()"></div></div>
-          <div><div class="field-label">Actual (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="a-actual" value="1000000" min="0" oninput="calcAll()"></div></div>
+          <div><div class="field-label">Target (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="a-target" placeholder="Enter target" min="0" oninput="calcAll()"></div></div>
+          <div><div class="field-label">Actual (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="a-actual" placeholder="Enter actual" min="0" oninput="calcAll()"></div></div>
         </div>
       </div>
       <div class="field-group">
         <div class="field-label">Last Year Same Period (₹) <span style="color:#aaa;font-weight:400">(optional)</span></div>
-        <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="a-ly" value="0" min="0" oninput="calcAll()" placeholder="0"></div>
+        <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="a-ly" placeholder="0" min="0" oninput="calcAll()"></div>
         <div class="inp-hint">Leave 0 if no LY data</div>
       </div>
       <div class="metrics-row">
@@ -604,19 +604,19 @@
   <div class="degrowth-banner" id="p-degrowth-banner">⚠️ Degrowth vs last year — no incentive payable</div>
   <div class="section-card open">
     <div class="section-header" onclick="toggleSection(this)">
-      <div class="section-header-left"><div class="section-icon icon-navy">🎯</div><div><div class="section-title">Enter Inputs</div><div class="section-period">Fill in yellow fields</div></div></div>
+      <div class="section-header-left"><div class="section-icon icon-navy">🎯</div><div><div class="section-title">Enter Inputs</div><div class="section-period">Enter performance values</div></div></div>
       <span class="chevron">⌄</span>
     </div>
     <div class="section-body">
       <div class="field-group">
         <div class="field-row">
-          <div><div class="field-label">Target (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-target" value="1000000" min="0" oninput="calcAll()"></div></div>
-          <div><div class="field-label">Actual (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-actual" value="1000000" min="0" oninput="calcAll()"></div></div>
+          <div><div class="field-label">Target (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-target" placeholder="Enter target" min="0" oninput="calcAll()"></div></div>
+          <div><div class="field-label">Actual (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-actual" placeholder="Enter actual" min="0" oninput="calcAll()"></div></div>
         </div>
       </div>
       <div class="field-group">
         <div class="field-label">Last Year Same Period (₹) <span style="color:#aaa;font-weight:400">(optional)</span></div>
-        <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-ly" value="0" min="0" oninput="calcAll()" placeholder="0"></div>
+        <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-ly" placeholder="0" min="0" oninput="calcAll()"></div>
         <div class="inp-hint">Leave 0 if no LY data</div>
       </div>
       <div class="metrics-row">
@@ -645,19 +645,19 @@
   <div class="degrowth-banner" id="by-degrowth-banner">⚠️ Degrowth vs last year — no incentive payable</div>
   <div class="section-card open">
     <div class="section-header" onclick="toggleSection(this)">
-      <div class="section-header-left"><div class="section-icon icon-navy">🎯</div><div><div class="section-title">Enter Inputs</div><div class="section-period">Fill in yellow fields</div></div></div>
+      <div class="section-header-left"><div class="section-icon icon-navy">🎯</div><div><div class="section-title">Enter Inputs</div><div class="section-period">Enter performance values</div></div></div>
       <span class="chevron">⌄</span>
     </div>
     <div class="section-body">
       <div class="field-group">
         <div class="field-row">
-          <div><div class="field-label">Target (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="by-target" value="1000000" min="0" oninput="calcAll()"></div></div>
-          <div><div class="field-label">Actual (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="by-actual" value="1000000" min="0" oninput="calcAll()"></div></div>
+          <div><div class="field-label">Target (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="by-target" placeholder="Enter target" min="0" oninput="calcAll()"></div></div>
+          <div><div class="field-label">Actual (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="by-actual" placeholder="Enter actual" min="0" oninput="calcAll()"></div></div>
         </div>
       </div>
       <div class="field-group">
         <div class="field-label">Last Year Same Period (₹) <span style="color:#aaa;font-weight:400">(optional)</span></div>
-        <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="by-ly" value="0" min="0" oninput="calcAll()" placeholder="0"></div>
+        <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="by-ly" placeholder="0" min="0" oninput="calcAll()"></div>
         <div class="inp-hint">Leave 0 if no LY data</div>
       </div>
       <div class="metrics-row">
@@ -694,8 +694,8 @@
       </div>
       <div class="field-group">
         <div class="field-row">
-          <div><div class="field-label">Sales Value (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="h-sales" value="1000000" min="0" oninput="calcAll()"></div></div>
-          <div><div class="field-label">Expiry/Breakage (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="h-expiry" value="10000" min="0" oninput="calcAll()"></div></div>
+          <div><div class="field-label">Sales Value (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="h-sales" placeholder="Enter sales" min="0" oninput="calcAll()"></div></div>
+          <div><div class="field-label">Expiry/Breakage (₹)</div><div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="h-expiry" placeholder="Enter expiry" min="0" oninput="calcAll()"></div></div>
         </div>
       </div>
       <div class="metrics-row">
