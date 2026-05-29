@@ -780,13 +780,13 @@ function fmtPct(n) { return (n * 100).toFixed(1) + '%'; }
 function calcIncentive(achvPct, actual, target, slabs) {
   for (let s of slabs) {
     if (achvPct >= s.from && achvPct <= s.to) {
-      return Math.min(actual, s.from * target) * s.rate;
+      return actual * s.rate;
     }
   }
   // Slab 5 catch (No Limit)
   const s5 = slabs[slabs.length - 1];
   if (achvPct >= s5.from) {
-    return Math.min(actual, s5.from * target) * s5.rate;
+    return actual * s5.rate;
   }
   return 0;
 }
@@ -808,7 +808,7 @@ function renderSlabs(containerId, slabs, achvPct, actual, target, blocked, noInc
 
   slabs.forEach((s, i) => {
     const isActive = (i === activeIdx);
-    const earn = isActive && !blocked ? Math.min(actual, s.from * target) * s.rate : 0;
+    const earn = isActive && !blocked ? actual * s.rate : 0;
     if (earn > 0) anyEarning = true;
     const toStr = s.to === Infinity ? '∞' : fmtPct(s.to);
     html += `<div class="slab-row${isActive ? ' active-slab' : ''}">
